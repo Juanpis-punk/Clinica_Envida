@@ -7,7 +7,9 @@ riesgos = [88,72,91,65,78,55,94,82,76,85,70,92,68,79,95,62,87,74,90,66,93,77,81,
 
 # Producto 0
 print("=== PRODUCTO 0 ===")  # título de la sección
-print("El paciente 5 se llama", nombres[4], ", tiene", edades[4], "años y su temperatura es", temperaturas[4], "°C.")  # imprime los datos de Sofía
+print("El paciente 5 se llama", nombres[4], 
+      ", tiene", edades[4], 
+      "años y su temperatura es", temperaturas[4], "°C.")  # imprime los datos de Sofía
 
 # Producto 1 Parte A
 def tiene_obra_social(obra):  # predicado P(x): tiene obra social
@@ -51,7 +53,8 @@ print("\n=== PRODUCTO 2 - DE MORGAN ===")  # título de la sección
 todos_con_obra = True  # ∀x P(x): supone que todos tienen obra social
 for i in range(25):  # recorre los 25 pacientes
     if not tiene_obra_social(obras_sociales[i]):  # si alguien no tiene obra social
-        todos_con_obra = False  # ∀x P(x) es falsa
+        todos_con_obra = False
+        break  # ∀x P(x) es falsa
 lado1_izq = not todos_con_obra  # lado izquierdo: ¬(∀x P(x))
 
 ##############################################################################
@@ -59,7 +62,8 @@ lado1_izq = not todos_con_obra  # lado izquierdo: ¬(∀x P(x))
 existe_sin_obra = False  # ∃x ¬P(x): supone que nadie carece de obra social
 for i in range(25):  # recorre los 25 pacientes
     if not tiene_obra_social(obras_sociales[i]):  # si alguien no tiene obra social
-        existe_sin_obra = True  # ∃x ¬P(x) es verdadera
+        existe_sin_obra = True
+        break  # ∃x ¬P(x) es verdadera
 lado1_der = existe_sin_obra  # lado derecho: ∃x ¬P(x)
 print("Ley 1 -> izquierda:", lado1_izq, "| derecha:", lado1_der, "| equivalentes:", lado1_izq == lado1_der)  # compara ambos lados
 
@@ -67,7 +71,8 @@ print("Ley 1 -> izquierda:", lado1_izq, "| derecha:", lado1_der, "| equivalentes
 existe_temp = False  # ∃x (temp >= 39.5): supone que nadie llega a 39.5
 for i in range(25):  # recorre los 25 pacientes
     if temperaturas[i] >= 39.5:  # si alguien tiene 39.5 o más
-        existe_temp = True  # ∃x Q'(x) es verdadera
+        existe_temp = True 
+        break # ∃x Q'(x) es verdadera
 lado2_izq = not existe_temp  # lado izquierdo: ¬(∃x Q'(x))
 
 ###############################################################################
@@ -75,7 +80,8 @@ lado2_izq = not existe_temp  # lado izquierdo: ¬(∃x Q'(x))
 todos_menor = True  # ∀x (temp < 39.5): supone que todos están por debajo
 for i in range(25):  # recorre los 25 pacientes
     if not (temperaturas[i] < 39.5):  # si alguien no está por debajo de 39.5
-        todos_menor = False  # ∀x ¬Q'(x) es falsa
+        todos_menor = False 
+        break  # ∀x ¬Q'(x) es falsa
 lado2_der = todos_menor  # lado derecho: ∀x ¬Q'(x)
 print("Ley 2 -> izquierda:", lado2_izq, "| derecha:", lado2_der, "| equivalentes:", lado2_izq == lado2_der)  # compara ambos lados
 
