@@ -1,4 +1,4 @@
-# ===== DATOS: 5 listas de 25 elementos (paciente Nº1 = índice 0) =====
+# LISTAS 
 nombres = ["Ana","Luis","Camila","Jorge","Sofía","Andrés","Valentina","Pedro","María","Carlos","Laura","Diego","Elena","Fernando","Gabriela","Hugo","Isabel","Javier","Karla","Leonardo","Mónica","Nicolás","Olivia","Pablo","Renata"]  # nombres de los pacientes
 edades = [28,35,22,41,30,25,38,29,33,27,45,24,31,36,26,42,23,34,29,37,21,32,39,26,44]  # edades de los pacientes
 temperaturas = [36.5,38.2,37.0,39.1,36.8,38.5,36.9,37.5,38.0,36.6,37.8,39.5,36.7,38.3,37.2,38.8,36.4,39.0,37.6,36.9,38.4,37.1,39.2,36.5,38.6]  # temperaturas en °C
@@ -80,6 +80,7 @@ lado2_der = todos_menor  # lado derecho: ∀x ¬Q'(x)
 print("Ley 2 -> izquierda:", lado2_izq, "| derecha:", lado2_der, "| equivalentes:", lado2_izq == lado2_der)  # compara ambos lados
 
 # Producto 3, verificar paciente 
+print("\n=== PRODUCTO 3 - VERIFICAR PACIENTE ===")  # título de la sección
 def verificar_paciente(nombre, edad, temperatura, obra_social, riesgo):
     # Comprobamos que no tenga obra social, tenga fiebre y no tenga riesgo alto
     if obra_social == False and temperatura >= 38.0 and riesgo < 80:
@@ -107,12 +108,12 @@ print("Pacientes que cumplen:", cumplen)
 # Mostramos la cantidad de pacientes que cumplen
 print("Cantidad que cumplen:", len(cumplen))
 # Mostramos los pacientes que no cumplen
-print("Pacientes que no cumplen:", no_cumplen)
+print("\nPacientes que no cumplen:", no_cumplen)
 # Mostramos la cantidad de pacientes que no cumplen
 print("Cantidad que no cumplen:", len(no_cumplen))
 # Recorremos los 25 pacientes para mostrar los datos de quienes cumplen
 # Definimos una función para verificar las condiciones del paciente
- 
+print("\n=== DATOS DE PACIENTES QUE CUMPLEN ===")  
 for i in range(25):
     # Verificamos nuevamente las condiciones de cada paciente
     if verificar_paciente(nombres[i], edades[i], temperaturas[i], obras_sociales[i], riesgos[i]) == True:
